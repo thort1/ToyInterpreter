@@ -1,0 +1,15 @@
+<program> ::= <statements> <EOF>
+<statements> ::= <statement>*
+<statement> ::= <var_assign> | <var_declare> | <print> | <if> | <fun_declare> | <fun_call>
+<var_assign> ::= NAME ASSIGN <expression>
+<var_declare> ::= VAR NAME SEMICOLON
+<print> ::= PRINT <expression> SEMICOLON
+<if> ::= IF <expression> LBRACE <statements> RBRACE |
+            IF <expression> LBRACE <statements> RBRACE ELSE LBRACE <statements> RBRACE
+<fun_declare> ::= FUN NAME OPAREN <parameters> CPAREN LBRACE <statements> RBRACE
+<arguments> ::= NAME (COMMA NAME)* | empty
+<parameters> ::= <expression> (COMMA <expression>)* | empty
+<expression> ::= <term> (<op> <term>)*
+<term> ::= OPAREN <expression> CPAREN | INT | DECIMAL | STRING | BOOLEAN | NAME | <fun_call>
+<fun_call> ::= NAME OPAREN <arguments> CPAREN
+<op> ::= PLUS | MINUS | EQUALS | MULTIPLY | DIVIDE

@@ -1,0 +1,22 @@
+fun factorial(n) {
+    var a;;
+    a = 100;
+    if ( n != 0 ) {
+        return n * factorial(n-1);
+    } else {
+        return 1;
+    }
+}
+
+fun factorialWhile(n) {
+    var sum;
+    sum = n;
+    n = n - 1;
+    while (n != 0) {
+        sum = sum * n;
+        n = n +- 1;
+    }
+    return sum;
+}
+
+print factorial(5);
